@@ -1,7 +1,12 @@
 $primaryColor: #FF0000;
+$pictureLength: 200px;
+$bioTextColor: #FFFFFF;
+$transformScaleFactor: 8;
+
 body {
   font-family: Verdana;
-  font-size: 1.5em;
+  font-size: 1.25em;
+
   h1 {
     color: $primaryColor; 
   }
@@ -15,12 +20,11 @@ body {
 
   .member {
     float: left;
-    /*border: 1px solid gray;*/
     margin: 10px;
     padding: 0px;
 
-    width: 200px;
-    height: 200px;
+    width: $pictureLength;
+    height: $pictureLength;
     border: 10px solid #fff;
     overflow: hidden;
     position: relative;
@@ -29,15 +33,15 @@ body {
     cursor: default;
 
     .name {
-      width: 200px;
-      height: 200px;
+      width: $pictureLength;
+      height: $pictureLength;
       position: absolute;
       overflow: hidden;
       top: 0;
       left: 0;
 
-      background-color: rgba(146,96,91,0.5);
-      opacity:0;
+      background-color: rgba(146, 96, 91, 0.5);
+      opacity: 0;
       transition: all 0.3s ease-in 0.4s;
     }
 
@@ -46,40 +50,35 @@ body {
       position: relative;
 
       transition: all 0.4s ease-in-out 0.5s; 
-      width: 200px;
-      height: 200px;
+      width: $pictureLength;
+      height: $pictureLength;
     }
 
     h3 {
       font-family: Oswald, Arial, sans-serif;
       text-transform: uppercase;
-      color: #fff;
+      color: $bioTextColor;
       text-align: center;
       position: relative;
-      font-size: 17px;
+      font-size: 1em;
       padding: 10px;
-      background: rgba(0, 0, 0, 0.8);
       margin: 20px 0 0 0;
 
-      opacity:0;
+      opacity: 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-      background: transparent;
-      margin: 20px 40px 0px 40px;
-      transform: scale(10);
+      margin: 15px 30px 0px 30px;
+      transform: scale($transformScaleFactor);
       transition: all 0.3s ease-in-out 0.1s;
     }
 
     p {
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 12px;
+      font: italic 0.6em Georgia, serif;
       position: relative;
-      color: #fff;
+      color: $bioTextColor;
       padding: 10px 20px 20px;
-      text-align: center;
 
-      opacity:0;
-      transform: scale(10);
+      opacity: 0;
+      transform: scale($transformScaleFactor);
       transition: all 0.3s ease-in-out 0.2s;
     }
   }
@@ -87,7 +86,7 @@ body {
   .member:hover {
 
     .name {  
-      opacity:1; 
+      opacity: 1; 
       transition-delay: 0s;
     }
 
@@ -102,7 +101,7 @@ body {
     }
 
     p { 
-      opacity:1; 
+      opacity: 1; 
       transform: scale(1);
       transition-delay: 0.2s;
     }
