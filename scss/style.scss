@@ -7,6 +7,9 @@ body {
   }
 }
 
+/* Hover effects adapted from example 6:
+   http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/
+*/
 #team-members {
   clear: both;
 
@@ -14,15 +17,94 @@ body {
     float: left;
     /*border: 1px solid gray;*/
     margin: 10px;
-    padding: 6px;
+    padding: 0px;
+
+    width: 200px;
+    height: 200px;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+
+    .name {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+
+      background-color: rgba(146,96,91,0.5);
+      opacity:0;
+      transition: all 0.3s ease-in 0.4s;
+    }
 
     img {
+      display: block;
+      position: relative;
+
+      transition: all 0.4s ease-in-out 0.5s; 
       width: 200px;
       height: 200px;
     }
 
-    div.name {
+    h3 {
+      font-family: Oswald, Arial, sans-serif;
+      text-transform: uppercase;
+      color: #fff;
       text-align: center;
+      position: relative;
+      font-size: 17px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      margin: 20px 0 0 0;
+
+      opacity:0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      background: transparent;
+      margin: 20px 40px 0px 40px;
+      transform: scale(10);
+      transition: all 0.3s ease-in-out 0.1s;
+    }
+
+    p {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 12px;
+      position: relative;
+      color: #fff;
+      padding: 10px 20px 20px;
+      text-align: center;
+
+      opacity:0;
+      transform: scale(10);
+      transition: all 0.3s ease-in-out 0.2s;
+    }
+  }
+
+  .member:hover {
+
+    .name {  
+      opacity:1; 
+      transition-delay: 0s;
+    }
+
+    img { 
+      transition-delay: 0s; 
+    }
+
+    h3 { 
+      opacity: 1;
+      transform: scale(1);
+      transition-delay: 0.1s;
+    }
+
+    p { 
+      opacity:1; 
+      transform: scale(1);
+      transition-delay: 0.2s;
     }
   }
 }
